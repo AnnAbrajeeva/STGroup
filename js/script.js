@@ -146,16 +146,34 @@ showCards.onclick = function(e) {
 
 // Формы
 const openModal = () => {
+
   modalAns.classList.add("show");
   overlay.classList.add("show");
   blur.classList.add("show-blur");
   modal.classList.add("show");
-  modal.style.position = 'absolute'
+}
+
+const closeModal = () => {
+  modalAns.classList.remove("show");
+  overlay.classList.remove("show");
+  blur.classList.remove("show-blur");
+  modal.classList.remove("show");
+  
 }
 
 openModalBtn.forEach(btn => {
   btn.addEventListener('click', openModal)
 })
+
+const closeSuccessModal = () => {
+  success.classList.remove("show");
+  overlay.classList.remove("show");
+  blur.classList.remove("show-blur");
+  modal.classList.remove("show");
+}
+
+overlay.addEventListener('click', closeModal)
+overlay.addEventListener('click', closeSuccessModal)
 
 backToMain.addEventListener('click', () => {
   success.classList.remove("show");
@@ -171,17 +189,16 @@ const clearInputs = () => {
   document.querySelector('textarea').value = "";
 };
 
+
+
 const submit = () => {
-  modal.style.position = 'fixed'
   overlay.classList.add('show')
   modalAns.classList.remove('show')
   success.classList.add("show");
+  modal.classList.add('show');
   setTimeout(() => {
-    success.classList.remove("show");
-    overlay.classList.remove("show");
-    blur.classList.remove("show-blur");
-    modal.classList.remove("show");
-  }, 10000);
+    closeSuccessModal
+  }, 5000);
   clearInputs()
 };
 

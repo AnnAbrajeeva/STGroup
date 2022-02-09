@@ -2,6 +2,11 @@
   .filters__filter img {
     display: none;
   }
+
+  .filters__title {
+    text-align: center;
+  }
+  
   .contacts__bg {
     display: none;
   }
@@ -387,7 +392,7 @@
   }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 400px) {
   .header {
     flex-direction: column;
   }
@@ -452,7 +457,6 @@
     font-size: 11px;
     padding-top: 9px;
     padding-bottom: 9px;
-
   }
 
   .steps__title {
@@ -486,5 +490,9 @@
 
   .contacts__contacts-number {
     font-size: 21px;
+  }
+
+  .contacts__social-icons {
+    max-width: 265px;
   }
 }

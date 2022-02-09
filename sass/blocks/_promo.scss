@@ -21,6 +21,7 @@
     text-transform: uppercase;
     color: $white;
     margin: 0;
+    max-width: 1070px;
 
     span {
       font-family: $PragmaticaBold;
@@ -28,9 +29,6 @@
       font-weight: bold;
       font-size: 37px;
       letter-spacing: 0.07em;
-      color: $red;
-      text-shadow: 1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff,
-        1px 1px 5px #555;
     }
   }
 
