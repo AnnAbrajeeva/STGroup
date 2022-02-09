@@ -610,6 +610,7 @@ html {
   font-size: 24px;
   color: #E20D24;
   margin: 0;
+  text-decoration: none;
 }
 .header__phone-link {
   display: block;
@@ -645,7 +646,7 @@ html {
   font-size: 40px;
   line-height: 49px;
   text-transform: uppercase;
-  color: #F9F9F9;
+  color: #FFFFFF;
   margin: 0;
   max-width: 1070px;
 }
@@ -675,7 +676,7 @@ html {
   font-weight: bold;
   font-size: 18px;
   line-height: 24px;
-  color: #F9F9F9;
+  color: #FFFFFF;
 }
 .promo__item::before {
   content: "";
@@ -700,7 +701,7 @@ html {
   font-size: 14px;
   line-height: 19px;
   text-transform: uppercase;
-  color: #F9F9F9;
+  color: #FFFFFF;
 }
 .promo__btn {
   display: block;
@@ -913,7 +914,7 @@ html {
   font-size: 25px;
   line-height: 34px;
   text-transform: uppercase;
-  color: #F9F9F9;
+  color: #FFFFFF;
   width: 182px;
 }
 .filters__btn {
@@ -930,7 +931,7 @@ html {
   font-size: 18px;
   line-height: 24px;
   text-decoration: underline;
-  color: #F9F9F9;
+  color: #FFFFFF;
   cursor: pointer;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -962,6 +963,12 @@ html {
   color: #333333;
   padding: 14px 39px 14px 15px;
   cursor: pointer;
+  font-family: "PragmaticaBook";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #333333;
 }
 .select:focus {
   outline: none;
@@ -1111,7 +1118,7 @@ html {
 .card__btn {
   display: block;
   margin-top: 30px;
-  color: #F9F9F9;
+  color: #FFFFFF;
   background-color: #E20D24;
   text-decoration: none;
   text-transform: uppercase;
@@ -1183,7 +1190,7 @@ html {
 .media__words {
   width: 100%;
   height: 60px;
-  background: url("../assets/img/Gruaz.png") center center;
+  background: url("../assets/img/Group.png") center center;
   background-repeat: space;
   background-size: 350px;
 }
@@ -1218,6 +1225,12 @@ html {
   max-width: 375px;
   width: 100%;
   padding: 10px;
+  border-right: 1px solid rgba(29, 29, 29, 0.1);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.advantages__card:last-child {
+  border: none;
 }
 .advantages__card-title {
   font-family: "PragmaticaBook";
@@ -1328,7 +1341,7 @@ html {
 .steps__btn {
   display: inline-block;
   margin-top: 85px;
-  color: #F9F9F9;
+  color: #FFFFFF;
   background-color: #E20D24;
   text-decoration: none;
 }
@@ -1348,13 +1361,13 @@ html {
   font-size: 25px;
   line-height: 34px;
   text-transform: uppercase;
-  color: #F9F9F9;
+  color: #FFFFFF;
 }
 .slogan__btn {
   margin-top: 50px;
   display: inline-block;
   text-decoration: none;
-  background-color: #F9F9F9;
+  background-color: #FFFFFF;
 }
 
 .contacts {
@@ -1442,7 +1455,7 @@ html {
 .contacts__form-btn {
   margin-top: 34px;
   display: inline-block;
-  color: #F9F9F9;
+  color: #FFFFFF;
   background-color: #E20D24;
   text-decoration: none;
 }
@@ -1490,6 +1503,7 @@ html {
   line-height: 50px;
   text-transform: uppercase;
   color: #333333;
+  text-decoration: none;
 }
 .contacts .contacts__line {
   margin-top: 58px;
@@ -1762,7 +1776,7 @@ html {
 .modal-form__btn {
   margin-top: 30px;
   background: #E20D24;
-  color: #F9F9F9;
+  color: #FFFFFF;
   display: block;
   max-width: 271px;
 }
@@ -1926,6 +1940,20 @@ html {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+}
+@media (max-width: 788px) {
+  .advantages__card {
+    border-right: none;
+    border-bottom: 1px solid rgba(29, 29, 29, 0.1);
+  }
+  .advantages__card:last-child {
+    border-bottom: none;
+  }
+
+  .arrow {
+    width: 50px;
+    height: 50px;
   }
 }
 @media (max-width: 775px) {
@@ -2211,6 +2239,15 @@ html {
     width: 40px;
     height: 40px;
   }
+
+  .black-white {
+    -webkit-text-stroke: 1px #000000;
+  }
+
+  .red-white {
+    -webkit-text-stroke: 1px red;
+    color: transparent;
+  }
 }
 @media (max-width: 465px) {
   .header__phone {
@@ -2234,18 +2271,6 @@ html {
 
   .media img {
     width: 100%;
-  }
-
-  .types__title span {
-    -webkit-text-stroke: 1px #e20d24;
-    color: white;
-    text-shadow: 1px 1px 0 #e20d24, 0px 0px 0 #e20d24, 1px 0px 0 #e20d24, -1px 1px 0 #e20d24, 1px 1px 0 #e20d24;
-  }
-
-  .types__title p {
-    -webkit-text-stroke: 1px black;
-    color: white;
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
   .types__item {
@@ -2284,14 +2309,6 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-
-  .red-white {
-    text-shadow: 1px 1px 0 #E20D24, -1px -1px 0 #E20D24, 1px -1px 0 #E20D24, -1px 1px 0 #E20D24, 1px 1px 0 #E20D24;
-  }
-
-  .black-white {
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
   .contacts__social-icons {
@@ -2406,6 +2423,10 @@ html {
 
   .contacts__social-icons {
     max-width: 265px;
+  }
+
+  .promo__title .white-red {
+    -webkit-text-stroke: 1px white;
   }
 }
 

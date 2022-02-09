@@ -6,7 +6,7 @@
   .filters__title {
     text-align: center;
   }
-  
+
   .contacts__bg {
     display: none;
   }
@@ -40,6 +40,22 @@
   .filters__results {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media (max-width: 788px) {
+  .advantages__card {
+    border-right: none;
+    border-bottom: 1px solid rgba(29, 29, 29, 0.1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .arrow {
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -298,6 +314,15 @@
     width: 40px;
     height: 40px;
   }
+
+  .black-white {
+    -webkit-text-stroke: 1px #000000;
+  }
+
+  .red-white {
+    -webkit-text-stroke: 1px red;
+    color: transparent;
+  }
 }
 
 @media (max-width: 465px) {
@@ -322,20 +347,6 @@
 
   .media img {
     width: 100%;
-  }
-
-  .types__title span {
-    -webkit-text-stroke: 1px #e20d24;
-    color: white;
-    text-shadow: 1px 1px 0 #e20d24, 0px 0px 0 #e20d24, 1px 0px 0 #e20d24,
-      -1px 1px 0 #e20d24, 1px 1px 0 #e20d24;
-  }
-
-  .types__title p {
-    -webkit-text-stroke: 1px black;
-    color: white;
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-      -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
   .types__item {
@@ -371,16 +382,6 @@
 
   .steps__title-wrapper {
     flex-direction: column;
-  }
-
-  .red-white {
-    text-shadow: 1px 1px 0 $red, -1px -1px 0 $red, 1px -1px 0 $red,
-      -1px 1px 0 $red, 1px 1px 0 $red;
-  }
-
-  .black-white {
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-      -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
   .contacts__social-icons {
@@ -494,5 +495,9 @@
 
   .contacts__social-icons {
     max-width: 265px;
+  }
+
+  .promo__title .white-red {
+    -webkit-text-stroke: 1px white;
   }
 }

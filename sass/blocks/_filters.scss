@@ -81,6 +81,12 @@
   color: $black;
   padding: 14px 39px 14px 15px;
   cursor: pointer;
+  font-family: $PragmaticaBook;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #333333;
 
   &:focus {
     outline: none;
