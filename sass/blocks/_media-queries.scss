@@ -43,8 +43,12 @@
   }
 }
 
-@media (max-width: 788px) {
+@media (max-width: 836px) {
+  .advantages__cards {
+    justify-content: center;
+  }
   .advantages__card {
+    padding: 20px 0;
     border-right: none;
     border-bottom: 1px solid rgba(29, 29, 29, 0.1);
 

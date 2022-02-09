@@ -1228,6 +1228,7 @@ html {
   border-right: 1px solid rgba(29, 29, 29, 0.1);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin-left: 25px;
 }
 .advantages__card:last-child {
   border: none;
@@ -1942,8 +1943,15 @@ html {
             align-items: center;
   }
 }
-@media (max-width: 788px) {
+@media (max-width: 836px) {
+  .advantages__cards {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
   .advantages__card {
+    padding: 20px 0;
     border-right: none;
     border-bottom: 1px solid rgba(29, 29, 29, 0.1);
   }
