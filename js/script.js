@@ -3,37 +3,35 @@ const up = document.querySelector(".arrow");
 const modalWeight = document.querySelector("#modalWeight");
 const weightValue = document.querySelector("#weight-value");
 const lengthValue = document.querySelector("#length-value");
-const modalValue = document.querySelector("#modalLength");
+const modalLength = document.querySelector("#modalLength");
 
 const form = document.querySelectorAll("form");
 const inputs = document.querySelectorAll("input");
 const success = document.querySelector(".modal__wrapper_success");
-const modalAns = document.querySelector(".modal__wrapper");
-const modal = document.querySelector(".modal");
+const modalAns = document.querySelector("[data-answers]");
+const modalSuccess = document.querySelector("[data-success]");
+
 const overlay = document.querySelector(".overlay");
 const blur = document.querySelector(".blur");
 let isValidate = false;
-const backToMain = document.querySelector('.modal-form__back')
+const backToMain = document.querySelector(".modal-form__back");
 
-const openModalBtn = document.querySelectorAll('[data-crane]')
-
+const openModalBtn = document.querySelectorAll("[data-modal]");
 
 const showCards = document.querySelector(".cards__show");
 const cards = document.querySelectorAll(".card");
 
-const images = document.querySelectorAll('.hover-img')
-const activeImg = document.querySelector('.types__img')
+const images = document.querySelectorAll(".hover-img");
+const activeImg = document.querySelector(".types__img");
 
-
-document.querySelector('.types__list').addEventListener('mouseover', (ev) => { 
-  if (target = ev.target.closest('.types__item')) {
+document.querySelector(".types__list").addEventListener("mouseover", (ev) => {
+  if ((target = ev.target.closest(".types__item"))) {
     let index = [...target.parentNode.children].indexOf(target);
 
     activeImg.style.backgroundImage = `url("${images[index].src}")`;
-   
   }
-})
-  
+});
+
 //Вверх
 
 window.addEventListener("scroll", () => {
@@ -47,10 +45,6 @@ window.addEventListener("scroll", () => {
 });
 
 // Input Range
-
-weightValue.innerHTML = modalWeight.value + " тонны";
-lengthValue.innerHTML = modalWeight.value + " метра";
-
 function getNoun(number, one, two, five) {
   let n = Math.abs(number);
   n %= 100;
@@ -66,6 +60,9 @@ function getNoun(number, one, two, five) {
   }
   return five;
 }
+
+weightValue.innerHTML = modalWeight.value + " тонны";
+lengthValue.innerHTML = modalLength.value + " метра";
 
 const changeSliderColor = (input) => {
   input.addEventListener("mousemove", () => {
@@ -128,83 +125,81 @@ let cardsNum = 3;
 function showMore(n) {
   for (let i = 0; i < cards.length; i++) {
     if (i < n) {
-      cards[i].style.display = 'flex';
-      if (n === cards.length) showCards.style.display = 'none';
-    } else  {
-      cards[i].style.display = 'none';
+      cards[i].style.display = "flex";
+      if (n === cards.length) showCards.style.display = "none";
+    } else {
+      cards[i].style.display = "none";
     }
   }
 }
 showMore(cardsNum);
 
-showCards.onclick = function(e) {
+showCards.onclick = function (e) {
   e.preventDefault();
   cardsNum += 3;
   showMore(cardsNum);
-}
-
+};
 
 // Формы
 const openModal = () => {
-
-  modalAns.classList.add("show");
   overlay.classList.add("show");
-  blur.classList.add("show-blur");
-  modal.classList.add("show");
-}
+  document.body.style.overflow = "hidden";
+};
 
 const closeModal = () => {
-  modalAns.classList.remove("show");
   overlay.classList.remove("show");
-  blur.classList.remove("show-blur");
-  modal.classList.remove("show");
-  
+  modalSuccess.classList.remove("show");
+  modalAns.classList.remove("hidden");
+  document.body.style.overflow = "";
+};
+
+openModalBtn.forEach((btn) => {
+  btn.addEventListener("click", openModal);
+});
+
+function showThanksModal() {
+  modalAns.classList.add("hidden");
+  openModal();
+  modalSuccess.classList.add("show");
 }
 
-openModalBtn.forEach(btn => {
-  btn.addEventListener('click', openModal)
-})
+overlay.addEventListener("click", (e) => {
+  if (e.target === overlay) {
+    closeModal();
+  }
+});
 
-const closeSuccessModal = () => {
-  success.classList.remove("show");
+backToMain.addEventListener("click", () => {
+  closeThanksModal();
+  document.body.style.overflow = "";
+});
+
+const closeThanksModal = () => {
   overlay.classList.remove("show");
+  modalSuccess.classList.remove("show");
+  modalAns.classList.remove("hidden");
   blur.classList.remove("show-blur");
-  modal.classList.remove("show");
-}
+  document.body.style.overflow = "";
+};
 
-overlay.addEventListener('click', closeModal)
-overlay.addEventListener('click', closeSuccessModal)
-
-backToMain.addEventListener('click', () => {
-  success.classList.remove("show");
-  overlay.classList.remove("show");
-  blur.classList.remove("show-blur");
-  clearInputs()
-})
+const submit = () => {
+  showThanksModal();
+  clearInputs();
+};
 
 const clearInputs = () => {
   inputs.forEach((item) => {
-    item.value = "";
+    if (item.type === "text" && item.type === "number") {
+      item.value = "";
+    }
   });
-  document.querySelector('textarea').value = "";
-};
-
-
-
-const submit = () => {
-  overlay.classList.add('show')
-  modalAns.classList.remove('show')
-  success.classList.add("show");
-  modal.classList.add('show');
-  setTimeout(() => {
-    closeSuccessModal
-  }, 5000);
-  clearInputs()
+  document.querySelector("textarea").value = "";
 };
 
 const validate = (elem) => {
   const regExpPhone = /(?:\+|\d)[\d\-\(\) ]{9,}\d/g;
   const regExpEmail = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/gim;
+  const regExpNumber = /[^\d]/g;
 
   if (elem.name === "username") {
     if (elem.value.length < 3) {
@@ -244,6 +239,18 @@ const validate = (elem) => {
       isValidate = true;
     }
   }
+
+  if (elem.name === "height") {
+    if (regExpNumber.test(elem.value)) {
+      elem.nextElementSibling.textContent = "Пожалуйста, введите верную высоту";
+      elem.classList.add("error");
+      isValidate = false;
+    } else {
+      elem.nextElementSibling.textContent = "";
+      elem.classList.remove("error");
+      isValidate = true;
+    }
+  }
 };
 
 form.forEach((item) => {
@@ -260,20 +267,18 @@ form.forEach((item) => {
   item.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const formData = new FormData(item);
-    for (key of formData.keys()) {
-      console.log(`${key}: ${formData.get(key)}`);
-    }
-
     for (let elem of item.elements) {
-      if (elem.tagName !== "BUTTON") {
+      if (
+        (elem.tagName !== "BUTTON" && elem.type === "text") ||
+        elem.type === "number" ||
+        elem.name === "question"
+      ) {
         if (elem.value === "") {
           elem.nextElementSibling.textContent =
             "Данное поле не может быть пустым";
           elem.classList.add("error");
           isValidate = false;
         } else {
-          elem.nextElementSibling.textContent = "";
           elem.classList.remove("error");
           isValidate = true;
         }
