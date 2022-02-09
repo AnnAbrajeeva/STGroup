@@ -1,0 +1,58 @@
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  &__link {
+    max-width: 143px;
+    display: block;
+
+    img {
+        object-fit: cover;
+    }
+  }
+
+  &__descr {
+    font-family: $PragmaticaBold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 115%;
+
+    span {
+      color: $red;
+    }
+  }
+
+  &__contacts {
+    text-align: right;
+  }
+
+  &__phone {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    color: $red;
+    margin: 0;
+  }
+
+  &__phone-link {
+    display: block;
+    margin-top: 15px;
+    font-family: $PragmaticaBold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $black;
+
+    &:hover {
+        text-decoration: none;
+        color: $red;
+    }
+  }
+}

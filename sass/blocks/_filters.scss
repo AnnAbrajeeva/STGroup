@@ -1,0 +1,116 @@
+.filters {
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+  background-color: $red;
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__title {
+    font-family: $PragmaticaBold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 34px;
+    text-transform: uppercase;
+    color: $white;
+    width: 182px;
+  }
+
+  &__btn {
+    display: block;
+    max-width: 295px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+  &__reset {
+    text-align: right;
+    font-family: $PragmaticaBook;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    text-decoration: underline;
+    color: $white;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    z-index: 100;
+
+    &:hover {
+        text-decoration: none;
+    }
+  }
+
+  &__results {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.select {
+  position: relative;
+  display: block;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  border: none;
+  background-color: $white;
+  padding: 14px 39px 14px 15px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    -webkit-box-shadow: 1px 0px 22px 7px #a80000;
+    box-shadow: 1px 0px 22px 7px #a80000;
+  }
+
+  &__wrapper {
+    position: relative;
+    max-width: 285px;
+    width: 100%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 20px;
+      bottom: 50%;
+      transform: translateY(50%);
+      width: 10px;
+      height: 6px;
+      display: block;
+      background: #fff
+        url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.50495 5.78413L0.205241 1.25827C-0.0684138 0.970375 -0.0684138 0.503596 0.205241 0.215836C0.478652 -0.0719461 0.922098 -0.071946 1.19549 0.215837L5.00007 4.22052L8.80452 0.215953C9.07805 -0.0718292 9.52145 -0.0718292 9.79486 0.215953C10.0684 0.503736 10.0684 0.970492 9.79486 1.25839L5.49508 5.78425C5.35831 5.92814 5.17925 6 5.00009 6C4.82085 6 4.64165 5.928 4.50495 5.78413Z' fill='%23ED266A'/%3E%3C/svg%3E%0A")
+        no-repeat center / cover;
+      transition: 0.2s ease-in;
+      pointer-events: none;
+
+
+      &.open::after {
+        transform: translateY(50%) rotate(180deg);
+      }
+    }
+  }
+}

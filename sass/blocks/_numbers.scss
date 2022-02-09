@@ -1,0 +1,36 @@
+.numbers {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  &__card {
+    max-width: 290px;
+    width: 100%;
+    border-top: 1px solid $black;
+  }
+
+  &__title {
+    margin-top: 15px;
+    font-family: PragmaticaBold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 48px;
+    color: $red;
+  }
+
+  &__descr {
+    font-family: $PragmaticaBook;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: $black;
+
+    span {
+        color: $red;
+    }
+  }
+}

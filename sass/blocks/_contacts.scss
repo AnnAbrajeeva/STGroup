@@ -1,0 +1,166 @@
+.contacts {
+  padding: 60px 0;
+  position: relative;
+
+  &__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      z-index: -1;
+  }
+
+  &__bg-white {
+      background-color: white;
+      width: 50%;
+  }
+
+  &__bg-grey {
+    background: #F9F9F9;
+    width: 50%;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__form-title {
+    font-family: $PragmaticaBold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: $black;
+
+    span {
+      font-size: 37px;
+      line-height: 50px;
+      letter-spacing: 0.07em;
+    }
+  }
+
+  &__form {
+    max-width: 470px;
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  &__form-input {
+    margin-top: 20px;
+    padding: 14px 20px;
+    width: 100%;
+    font-family: $PragmaticaBook;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #b7b7b7;
+    border: 1px solid rgba(51, 51, 51, 0.5);
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  textarea {
+      height: 143px;
+      resize: none;
+  }
+
+  &__form-conf {
+    display: block;
+    margin-top: 10px;
+    font-family: Pragmatica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: $black;
+  }
+
+  &__form-btn {
+    margin-top: 34px;
+    display: inline-block;
+    color: $white;
+    background-color: $red;
+    text-decoration: none;
+
+    &::after {
+      background: url("../assets/svg/arrow-white.svg");
+    }
+  }
+
+  &__contacts-blocks {
+    margin-top: 53px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__contacts-block {
+      max-height: 471px;
+      height: 100%;
+    margin-top: 51px;
+  }
+
+  &__contacts-title {
+    padding-left: 70px;
+    position: relative;
+    font-family: $PragmaticaBold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: $black;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 45px;
+      height: 22px;
+      background: url("../assets/svg/arrowRed.svg");
+    }
+  }
+
+  &__contacts-number {
+    font-family: $PragmaticaBook;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 37px;
+    line-height: 50px;
+    text-transform: uppercase;
+    color: $black;
+  }
+
+  .contacts__line {
+    margin-top: 58px;
+    width: 100%;
+    border: 1px solid rgba(51, 51, 51, 0.5);
+  }
+
+  &__social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 83px;
+  }
+
+  &__social-icon {
+      margin-right: 40px;
+
+      svg {
+          transition: all 0.3s ease;
+      }
+
+      &:hover svg {
+          fill: $red;
+      }
+  }
+}
