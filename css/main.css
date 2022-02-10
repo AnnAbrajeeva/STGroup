@@ -384,7 +384,7 @@ html {
 }
 
 .btn {
-  padding: 15px 45px;
+  padding: 15px 40px;
   border: none;
   font-family: "PragmaticaBold";
   position: relative;
@@ -415,15 +415,14 @@ html {
   transition: all ease-out 240ms;
 }
 .btn_anim:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  opacity: 0.7;
 }
 .btn_anim:focus {
   outline: transparent;
 }
 .btn_anim:focus-visible {
-  -webkit-transform: scale(1.05) translateY(0.95);
-          transform: scale(1.05) translateY(0.95);
+  -webkit-filter: brightness(0.2);
+          filter: brightness(0.2);
 }
 .btn_anim:active {
   -webkit-transform: scale(0.95);
@@ -659,7 +658,7 @@ html {
 }
 .promo__descr {
   margin-top: 89px;
-  max-width: 409px;
+  max-width: 427px;
 }
 .promo__descr-img_mobi {
   display: none;
@@ -709,7 +708,7 @@ html {
 }
 .promo__descr-img {
   position: absolute;
-  left: 450px;
+  left: 550px;
   bottom: -60px;
   max-width: 952px;
   max-height: 432px;
@@ -1057,10 +1056,6 @@ html {
       -ms-flex-align: center;
           align-items: center;
 }
-.card:hover {
-  -webkit-box-shadow: 5px 5px 35px -13px #000000;
-  box-shadow: 5px 5px 35px -13px #000000;
-}
 .card__title {
   font-family: "PragmaticaBold";
   font-style: normal;
@@ -1069,6 +1064,8 @@ html {
   line-height: 35px;
   text-transform: uppercase;
   color: #333333;
+  -ms-flex-item-align: start;
+      align-self: start;
 }
 .card__img {
   width: 100%;
@@ -1190,7 +1187,7 @@ html {
 .media__words {
   width: 100%;
   height: 60px;
-  background: url("../assets/img/Group.png") center center;
+  background: url("../assets/img/Group-space.png") center center;
   background-repeat: space;
   background-size: 350px;
 }
@@ -1549,7 +1546,7 @@ html {
 }
 .footer__logo {
   background: url("../assets/svg/footer-logo.svg") center center/cover no-repeat;
-  width: 140px;
+  width: 145px;
   height: 30px;
 }
 .footer__contracts {
@@ -2199,7 +2196,7 @@ html {
             flex-direction: column;
   }
 }
-@media (max-width: 550px) {
+@media (max-width: 600px) {
   .promo__title {
     font-size: 25px;
     text-align: center;
@@ -2216,31 +2213,39 @@ html {
   .types__title {
     font-size: 25px;
     text-align: center;
+    line-height: 35px;
   }
   .types__title span {
     font-size: 25px;
+    line-height: 35px;
   }
 
   .handout__title {
     font-size: 25px;
     text-align: center;
+    line-height: 38px;
   }
   .handout__title span {
     font-size: 25px;
+    line-height: 38px;
   }
 
   .advantages__title {
     font-size: 25px;
+    line-height: 30px;
   }
   .advantages__title span {
     font-size: 25px;
+    line-height: 30px;
   }
 
   .steps__title {
     font-size: 25px;
+    line-height: 35px;
   }
   .steps__title span {
     font-size: 25px;
+    line-height: 35px;
   }
 
   .arrow {
@@ -2276,6 +2281,9 @@ html {
   .types__title {
     font-size: 18px;
   }
+  .types__title span {
+    font-size: 18px;
+  }
 
   .media img {
     width: 100%;
@@ -2286,10 +2294,12 @@ html {
   }
 
   .handout__title {
-    line-height: 35px;
+    line-height: 28px;
+    font-size: 18px;
   }
   .handout__title span {
-    line-height: 35px;
+    line-height: 28px;
+    font-size: 18px;
   }
 
   .steps__item {
@@ -2367,6 +2377,12 @@ html {
 
   .types {
     padding-bottom: 0;
+  }
+  .types__title {
+    line-height: 25px;
+  }
+  .types__title span {
+    line-height: 25px;
   }
 
   .card__btn {
